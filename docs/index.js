@@ -17,7 +17,7 @@ window.onload = function(){
         return randomInt(xors) / 2147483648;
     }
     function shuffle(xs){
-        var v = Object.assign({}, seed);
+        var v = {x:seed.x, y:seed.y ,z:seed.z, w:seed.w};
         var xs = xs.slice();
         var ys = [];
         while(0 < xs.length){
@@ -85,9 +85,9 @@ window.onload = function(){
         var margin = 60;
         var bottomTextLetterSpacing = 20;
 
-        var topTextFont = `normal bold ${topTextSize}px/2 "Yu Mincho"`;
-        var middleTextFont = `normal 400 ${middleTextSize}px/2 japarifont`;
-        var bottomTextFont = `normal 400 ${bottomTextSize}px/2 PlayBold`;
+        var topTextFont = 'normal bold '+topTextSize+'px/2 "Yu Mincho"';
+        var middleTextFont = 'normal 400 '+middleTextSize+'px/2 japarifont';
+        var bottomTextFont = 'normal 400 '+bottomTextSize+'px/2 PlayBold';
 
         // resize canvas
         g.font = topTextFont;
@@ -112,7 +112,7 @@ window.onload = function(){
 
         // stroke top text 
         function iterate(callback){
-            var xors = Object.assign({}, seed);
+            var xors = {x:seed.x, y:seed.y ,z:seed.z, w:seed.w};
             g.save();
 
             g.font = topTextFont;        
@@ -138,7 +138,7 @@ window.onload = function(){
             g.restore();
         }
         g.save();
-        var xors = Object.assign({}, seed);
+        var xors = {x:seed.x, y:seed.y ,z:seed.z, w:seed.w};
         
 
 
@@ -178,7 +178,7 @@ window.onload = function(){
         
         // fill charactors
         var x = 0;
-        var xors = Object.assign({}, seed);
+        var xors = {x:seed.x, y:seed.y ,z:seed.z, w:seed.w};
         for(var i = 0; i < middleText.length; i++){
             var c = middleText.slice(i, i + 1);
 
